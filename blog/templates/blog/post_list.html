@@ -1,13 +1,23 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>homepage</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <style>
+        body{
+        background-color : teal;
+        color : yellow;
+        }
+    </style>
 </head>
 <body>
-<h1 style="color:blue;text-align:center;">WE CAN DO IT GUYS .KEEP UP THE GOOD WORK.</h1>
+<h1 style="color:red;text-align:center;">WE CAN DO IT GUYS .KEEP UP THE GOOD WORK.</h1>
 {% for post in posts %}
-<h3><a href="">{{ post.title}}</a> </h3>
+<p>{{ post.pk }}</p>
+<h2><a href="{% url 'post_details' post.pk %}" style="color:red;">{{ post.title}}</a> </h2>
 <p>{{post.published_date}}</p>
 <p>{{post.text |linebreaksbr}}</p>
 <br/>

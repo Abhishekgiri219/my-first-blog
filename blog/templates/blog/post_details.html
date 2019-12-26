@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post_details</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <style>
+        h1{
+            height : 50px;
+        }
+        body{
+            background-color: grey;
+            color : black;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    {%for i in post%}
+    <h1>{{i.title}}</h1><br>
+    <p>{{i.published_date}}</p><br>
+    <p>{{i.text | linebreaksbr}}</p>
+    {% endfor %}
+</body>
+</html>

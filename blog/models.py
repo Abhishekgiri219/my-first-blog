@@ -15,4 +15,10 @@ class Post(models.Model):
         return self.title
 
 class SportNew(models.Model):
-    text=models.TextField()
+    text = models.TextField()
+    SPORT_CHOICES = [
+        ('ftb', 'football'),
+        ('cri', 'cricket'),
+        ('tt', 'table-tennis'),
+    ]
+    sport_choice = models.CharField(max_length=50, choices=SPORT_CHOICES, blank=True)
